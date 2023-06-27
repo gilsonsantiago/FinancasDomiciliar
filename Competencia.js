@@ -308,8 +308,19 @@ class Competencia{
   /** *************************************** */
   buscarProximoLancamento(){
 
-    let numproximo = this.movto[0].lacto
-    
+    let numproximo
+
+    if(this.movto.length == 0){
+
+      numproximo = 0
+      
+    } else {
+
+      numproximo = this.movto[0].lacto
+      
+    }
+
+        
     for(let i = 0; i < this.movto.length; i++){
       
        if(this.movto[i].lacto > numproximo){
@@ -326,9 +337,17 @@ class Competencia{
    /** *************************************** */
    buscarProximoConta(){
 
-    let numproximo = this.contas[0].id
+   let numproximo 
 
+   if(this.contas.length == 0){
+
+     numproximo = 0
      
+   } else {
+
+     numproximo = this.contas[0].id
+   }
+      
     for(let i = 0; i < this.contas.length; i++){
       
        if(this.contas[i].id > numproximo){
@@ -340,6 +359,7 @@ class Competencia{
     return numproximo + 1
     
   }
+
 
  
 
